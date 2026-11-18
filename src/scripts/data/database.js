@@ -5,11 +5,11 @@ const DATABASE_VERSION = 1;
 const OBJECT_STORE_NAME = 'saved-stories';
 
 const dbPromise = openDB(DATABASE_NAME, DATABASE_VERSION, {
-    upgrade: (database) => {
-        database.createObjectStore(OBJECT_STORE_NAME, {
-            keyPath: 'id',
-        });
-    },
+  upgrade: (database) => {
+    database.createObjectStore(OBJECT_STORE_NAME, {
+      keyPath: 'id',
+    });
+  },
 });
 
 const Database = {
@@ -26,7 +26,7 @@ const Database = {
 
   async getStoryById(id) {
     if (!id) {
-        throw new Error('`id` is required.');
+      throw new Error('`id` is required.');
     }
 
     return (await dbPromise).get(OBJECT_STORE_NAME, id);
@@ -38,9 +38,9 @@ const Database = {
 
   async removeStory(id) {
     if (!id) {
-        throw new Error('`id` is required.');
+      throw new Error('`id` is required.');
     }
-    
+
     return (await dbPromise).delete(OBJECT_STORE_NAME, id);
   },
 };

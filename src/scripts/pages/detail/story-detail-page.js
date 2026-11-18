@@ -3,7 +3,7 @@ import {
   generateStoryDetailTemplate,
   generateStoryDetailErrorTemplate,
   generateSaveStoryButtonTemplate,
-  generateRemoveStoryButtonTemplate
+  generateRemoveStoryButtonTemplate,
 } from '../../templates.js';
 import StoryDetailPresenter from './story-detail-presenter.js';
 import { parseActivePathname } from '../../routes/url-parser.js';
@@ -93,8 +93,7 @@ export default class StoryDetailPage {
   }
 
   renderSaveButton() {
-    document.getElementById('save-actions-container').innerHTML =
-      generateSaveStoryButtonTemplate();
+    document.getElementById('save-actions-container').innerHTML = generateSaveStoryButtonTemplate();
 
     document.getElementById('story-detail-save').addEventListener('click', async () => {
       await this.#presenter.saveStory();

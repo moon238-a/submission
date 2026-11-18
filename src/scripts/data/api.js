@@ -124,7 +124,7 @@ export async function detailStory(id) {
       const storiesResponse = await getAllStory();
 
       if (storiesResponse.ok) {
-        const cachedStory = storiesResponse.listStory?.find((story) => story.id === id,);
+        const cachedStory = storiesResponse.listStory?.find((story) => story.id === id);
 
         if (cachedStory) {
           return {

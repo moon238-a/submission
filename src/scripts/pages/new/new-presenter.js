@@ -50,9 +50,7 @@ export default class NewPresenter {
           throw new Error(beforeResponse.message);
         }
 
-        previousStoryIds = new Set(
-          (beforeResponse.listStory || []).map((story) => story.id)
-        );
+        previousStoryIds = new Set((beforeResponse.listStory || []).map((story) => story.id));
       }
 
       const data = {
@@ -100,7 +98,7 @@ export default class NewPresenter {
 
         console.log('Story baru ditemukan:', newStory);
         console.log('ID story untuk notifikasi:', newStory?.id);
-        
+
         if (newStory) {
           console.log({
             title: 'Story berhasil dibuat',

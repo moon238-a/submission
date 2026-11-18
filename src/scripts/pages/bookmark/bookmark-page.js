@@ -1,12 +1,12 @@
-import { 
+import {
   generateLoadingTemplate,
   generateStoryItemTemplate,
   generateStoriesListEmptyTemplate,
-  generateStoriesListErrorTemplate
-} from "../../templates.js";
-import BookmarkPresenter from "./bookmark-presenter.js";
-import Database from "../../data/database.js";
-import Map from "../../utils/map.js";
+  generateStoriesListErrorTemplate,
+} from '../../templates.js';
+import BookmarkPresenter from './bookmark-presenter.js';
+import Database from '../../data/database.js';
+import Map from '../../utils/map.js';
 
 export default class BookmarkPage {
   #presenter = null;

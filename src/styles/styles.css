@@ -98,8 +98,7 @@ body {
 .bookmark-container {
   background-color: var(--secondary-color);
   background-image:
-    linear-gradient(rgb(255, 96, 130), #ffafc1, rgb(255, 228, 246)),
-    url(../public/images/bg.png);
+    linear-gradient(rgb(255, 96, 130), #ffafc1, rgb(255, 228, 246)), url(../public/images/bg.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;

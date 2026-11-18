@@ -32,7 +32,7 @@ export default class StoryDetailPresenter {
     try {
       let story;
 
-      try{
+      try {
         const response = await this.#model.detailStory(this.#storyId);
 
         if (!response.ok || !response.story) {
@@ -54,26 +54,24 @@ export default class StoryDetailPresenter {
 
         story = savedStory;
       }
-        
+
       try {
-          const storiesResponse = await this.#model.getAllStory();
+        const storiesResponse = await this.#model.getAllStory();
 
-          if (storiesResponse.ok) {
-            this.#stories = storiesResponse.listStory;
+        if (storiesResponse.ok) {
+          this.#stories = storiesResponse.listStory;
 
-            this.#currentIndex = this.#stories.findIndex((item) => item.id === this.#storyId);
-          }
-        } catch (error) {
-          console.error('Failed to load story navigation:', error);
+          this.#currentIndex = this.#stories.findIndex((item) => item.id === this.#storyId);
         }
+      } catch (error) {
+        console.error('Failed to load story navigation:', error);
+      }
 
-        this.#view.populateStoryDetailAndInitialMap({
-          story,
-          hasPrevious: this.#currentIndex > 0,
-          hasNext: this.#currentIndex >= 0 && this.#currentIndex < this.#stories.length - 1,
-        });
-      
-      
+      this.#view.populateStoryDetailAndInitialMap({
+        story,
+        hasPrevious: this.#currentIndex > 0,
+        hasNext: this.#currentIndex >= 0 && this.#currentIndex < this.#stories.length - 1,
+      });
     } catch (error) {
       console.error('showStoryDetail: error:', error);
       this.#view.populateStoryDetailError(error.message);

@@ -8,7 +8,7 @@ import {
   generateMainGuestOnlyNavigationListTemplate,
   generateGuestHasCreatedStoryNavigationListTemplate,
   generateSubscribeButtonTemplate,
-  generateUnsubscribeButtonTemplate
+  generateUnsubscribeButtonTemplate,
 } from '../templates.js';
 import { setupSkipToContent, transitionHelper, isServiceWorkerAvailable } from '../utils/index.js';
 import {
@@ -18,7 +18,11 @@ import {
   hasGuestCreatedStory,
   endGuestSession,
 } from '../utils/auth.js';
-import { isCurrentPushSubscriptionAvailable, subscribe, unsubscribe } from '../utils/notification-helper.js';
+import {
+  isCurrentPushSubscriptionAvailable,
+  subscribe,
+  unsubscribe,
+} from '../utils/notification-helper.js';
 
 class App {
   #content = null;
@@ -157,7 +161,7 @@ class App {
     const transition = transitionHelper({
       updateDOM: async () => {
         this.#content.innerHTML = await page.render();
-        
+
         if (typeof page.afterRender === 'function') {
           await page.afterRender();
         }
