@@ -98,7 +98,7 @@ body {
 .bookmark-container {
   background-color: var(--secondary-color);
   background-image:
-    linear-gradient(rgb(255, 96, 130), #ffafc1, rgb(255, 228, 246)), url(../public/images/bg.png);
+    linear-gradient(rgb(112, 94, 255), rgb(179, 108, 255), rgb(255, 228, 246)), url(../public/images/bg.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
@@ -139,7 +139,7 @@ body {
   z-index: -1;
 
   background-image:
-    linear-gradient(rgb(107, 92, 219), rgb(160, 107, 216), rgb(255, 228, 246)),
+    linear-gradient(rgb(98, 85, 202), rgb(160, 107, 216), rgb(255, 228, 246)),
     url(../public/images/bg.png);
   background-repeat: no-repeat;
   background-size: cover;
